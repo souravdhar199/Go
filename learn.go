@@ -10,6 +10,10 @@ func main() {
 	test1(19, "WWW")
 	fmt.Println(fucnThatreturnint("String 1", "String 2"))
 
+	value1, value2 := swap("Hello", "name")
+
+	fmt.Println(value2, value1)
+
 }
 
 func test1(value int, value2 string) {
@@ -20,4 +24,10 @@ func test1(value int, value2 string) {
 func fucnThatreturnint(v, v1 string) int {
 	fmt.Println("Passing data -->", v, v1)
 	return 12
+}
+
+/* A function can return any number of result */
+
+func swap(string1, string2 string) (string, string) {
+	return string1, string2
 }
