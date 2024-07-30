@@ -14,6 +14,9 @@ func main() {
 
 	fmt.Println(value2, value1)
 
+	// This function from another file
+	arrays()
+
 }
 
 func test1(value int, value2 string) {
@@ -27,7 +30,6 @@ func fucnThatreturnint(v, v1 string) int {
 }
 
 /* A function can return any number of result */
-
 func swap(string1, string2 string) (string, string) {
 	return string1, string2
 }
