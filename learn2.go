@@ -9,6 +9,7 @@ func arrays() {
 	arrayType1()
 	arratTyepe2()
 	loopingArray()
+	arrayLooping()
 
 }
 
@@ -26,13 +27,29 @@ func arratTyepe2() {
 
 func loopingArray() {
 	arrayVariable := []int{1, 2, 3}
-
 	/*
-
 		The range returns index & value
-
 	*/
 	for index, value := range arrayVariable {
 		fmt.Println("Index", index, " Value is -->", value)
 	}
+}
+
+func arrayLooping() int {
+
+	//Example of initializing an array
+	money := make([]int, 4)
+
+	sum := 0
+
+	for i := 0; i < len(money); i++ {
+		money[i] = i * 2
+	}
+	// _ means ignore the return value
+	for _, value := range money {
+		sum += value
+	}
+
+	fmt.Println("Sum -->", sum)
+	return sum
 }
