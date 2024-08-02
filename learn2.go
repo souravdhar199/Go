@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"unicode"
 )
 
 func arrays() {
@@ -10,6 +11,8 @@ func arrays() {
 	arratTyepe2()
 	loopingArray()
 	arrayLooping()
+	charcterArray()
+	checkPalindrome()
 
 }
 
@@ -52,4 +55,36 @@ func arrayLooping() int {
 
 	fmt.Println("Sum -->", sum)
 	return sum
+}
+
+func charcterArray() {
+	//this is how we initialize an char array
+	charArray := []rune{'a', 'b', 'a'}
+
+	p := 0
+	p2 := len(charArray) - 1
+
+	for p <= p2 {
+		fmt.Println("Hello", rune(charArray[p]))
+		p++
+	}
+}
+
+func checkPalindrome() {
+	/*
+		How to get a character from a string
+
+		rune means char
+
+		string1[1] ==> returns a string of b
+
+	*/
+	string1 := "aba"
+
+	fmt.Println("This is one of the character from string1 --> ", string(string1[1]) == "as")
+
+	fmt.Println(unicode.IsLetter(rune(string1[1])))
+
+	fmt.Println(unicode.IsDigit(rune(string1[1])))
+
 }
