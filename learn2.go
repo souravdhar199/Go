@@ -13,6 +13,7 @@ func arrays() {
 	arrayLooping()
 	charcterArray()
 	checkPalindrome()
+	funCombination()
 
 }
 
@@ -87,4 +88,35 @@ func checkPalindrome() {
 
 	fmt.Println(unicode.IsDigit(rune(string1[1])))
 
+}
+
+func funCombination() {
+	chars := []string{
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ", // X
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ", // H
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ", // U
+		"0123456789",                 // 3
+		"-",                          // -
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ", // D
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ", // X
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ", // B
+		"0123456789",                 // 3
+	}
+
+	var results []string
+	generateCombinations("", chars, len(chars), 0, &results)
+
+	// Print the results
+
+}
+
+func generateCombinations(prefix string, chars []string, length int, pos int, results *[]string) {
+	if pos == length {
+		*results = append(*results, prefix)
+		return
+	}
+	for _, char := range chars[pos] {
+		fmt.Println(prefix + string(char))
+		generateCombinations(prefix+string(char), chars, length, pos+1, results)
+	}
 }
