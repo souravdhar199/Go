@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"reflect"
+	"strconv"
 )
 
 func main() {
@@ -15,7 +17,8 @@ func main() {
 	fmt.Println(value2, value1)
 
 	// This function from another file
-	arrays()
+	//arrays()
+	learnMoreArray()
 
 }
 
@@ -32,4 +35,23 @@ func fucnThatreturnint(v, v1 string) int {
 /* A function can return any number of result */
 func swap(string1, string2 string) (string, string) {
 	return string1, string2
+}
+
+func learnMoreArray() {
+	array1 := make([]string, 10)
+	array2 := make([]string, 10)
+
+	for index := range array1 {
+		array1[index] = "Hello => " + strconv.Itoa(index)
+	}
+
+	for _, value := range array1 {
+		fmt.Println(value)
+	}
+
+	for i := 0; i < len(array2); i++ {
+		array2[i] = "Hello => " + strconv.Itoa(i)
+	}
+
+	fmt.Println("These two array are equal?", reflect.DeepEqual(array1, array2))
 }

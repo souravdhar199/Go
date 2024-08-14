@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 	"unicode"
 )
 
@@ -13,7 +14,8 @@ func arrays() {
 	arrayLooping()
 	charcterArray()
 	checkPalindrome()
-	funCombination()
+	//funCombination()
+	timeCheck()
 
 }
 
@@ -119,4 +121,20 @@ func generateCombinations(prefix string, chars []string, length int, pos int, re
 		fmt.Println(prefix + string(char))
 		generateCombinations(prefix+string(char), chars, length, pos+1, results)
 	}
+}
+
+func timeCheck() {
+	numStrings := 1000000 // Number of strings to print for testing
+	start := time.Now()
+
+	for i := 0; i < numStrings; i++ {
+		fmt.Println("This is string number", i)
+	}
+
+	duration := time.Since(start)
+	fmt.Printf("Time taken to print %d strings: %v\n", numStrings, duration)
+
+	// Extrapolate for 30 billion strings
+	estimatedTime := duration * 30000
+	fmt.Printf("Estimated time to print 30 billion strings: %v\n", estimatedTime)
 }
