@@ -19,6 +19,8 @@ func main() {
 	// This function from another file
 	//arrays()
 	learnMoreArray()
+	max := max(12, 192738127398)
+	fmt.Println("Max number is --> ", max)
 
 }
 
@@ -54,4 +56,12 @@ func learnMoreArray() {
 	}
 
 	fmt.Println("These two array are equal?", reflect.DeepEqual(array1, array2))
+}
+
+func max(num1 int, num2 int) int {
+	if num1 > num2 {
+		return num1
+	} else {
+		return num2
+	}
 }
