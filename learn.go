@@ -21,6 +21,7 @@ func main() {
 	learnMoreArray()
 	max := max(12, 192738127398)
 	fmt.Println("Max number is --> ", max)
+	hashMap()
 
 }
 
@@ -64,4 +65,25 @@ func max(num1 int, num2 int) int {
 	} else {
 		return num2
 	}
+}
+
+func hashMap() {
+	hashMap := make(map[int]int)
+
+	value := 1
+
+	for value != 10 {
+		hashMap[value] = value * 2
+		value++
+	}
+
+	//this for loop will print key --> value, only printing the odd keys
+	for key, value := range hashMap {
+		if key%2 == 0 {
+			delete(hashMap, key)
+		} else {
+			fmt.Println(key, "--> ", value)
+		}
+	}
+
 }
