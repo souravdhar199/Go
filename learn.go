@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 	"reflect"
 	"strconv"
@@ -22,6 +23,7 @@ func main() {
 	max := max(12, 192738127398)
 	fmt.Println("Max number is --> ", max)
 	hashMap()
+	library()
 
 }
 
@@ -85,5 +87,20 @@ func hashMap() {
 			fmt.Println(key, "--> ", value)
 		}
 	}
+
+}
+
+func library() {
+	// Max Integer
+	maxInt := math.MaxInt64
+	fmt.Println("Maximum Int--> ", maxInt)
+	minInt := -math.MaxInt64
+	fmt.Println("Minimum Int--> ", minInt)
+
+	// Max double
+	maxDouble := math.MaxFloat64
+	fmt.Println("MinDouble --> ", maxDouble)
+	minDouble := math.MinInt64
+	fmt.Println("MinDouble --> ", minDouble)
 
 }
