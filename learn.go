@@ -5,7 +5,9 @@ import (
 	"math"
 	"math/rand"
 	"reflect"
+	"sort"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -18,10 +20,10 @@ func main() {
 	fmt.Println(value2, value1)
 
 	// This function from another file
-	//arrays()
+	arrays()
 	learnMoreArray()
-	max := max(12, 192738127398)
-	fmt.Println("Max number is --> ", max)
+	//max := max(12, 192738127398)
+	//fmt.Println("Max number is --> ", max)
 	hashMap()
 	library()
 
@@ -47,6 +49,7 @@ func learnMoreArray() {
 	array2 := make([]string, 10)
 
 	for index := range array1 {
+		array1 = append(array1, "Came here")
 		array1[index] = "Hello => " + strconv.Itoa(index)
 	}
 
@@ -88,6 +91,16 @@ func hashMap() {
 		}
 	}
 
+	stringListHashMap := make(map[string][]string)
+
+	// This will return a list so we will have the append()
+	stringListHashMap["hey"] = append(stringListHashMap["hey"], "not like us not with us --> ")
+	stringListHashMap["hey"] = append(stringListHashMap["hey"], "not like us not with uss")
+
+	for _, value := range stringListHashMap {
+		fmt.Println(value)
+	}
+
 }
 
 func library() {
@@ -102,5 +115,15 @@ func library() {
 	fmt.Println("MinDouble --> ", maxDouble)
 	minDouble := math.MinInt64
 	fmt.Println("MinDouble --> ", minDouble)
+
+	//Sort a string
+	var letters string = "bcda"
+	arrayLetter := strings.Split(letters, "")
+	sort.Strings(arrayLetter)
+	fmt.Println(letters, "-->", arrayLetter)
+
+	//now we can join the string
+	sortedString := strings.Join(arrayLetter, "")
+	fmt.Println("Here is the sorted string --> ", sortedString)
 
 }
