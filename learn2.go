@@ -15,7 +15,7 @@ func arrays() {
 	charcterArray()
 	checkPalindrome()
 	//funCombination()
-	timeCheck()
+	//timeCheck()
 
 }
 

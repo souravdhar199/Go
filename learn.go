@@ -101,6 +101,29 @@ func hashMap() {
 		fmt.Println(value)
 	}
 
+	// Count of character in a String using hashMap
+	var data string = "abcdef"
+
+	// byte in go represent ASCII value
+	charMap := make(map[byte]int)
+	for i := 0; i < len(data); i++ {
+		charMap[data[i]]++
+	}
+
+	fmt.Println("Char Ascii value array ", charMap)
+
+	/*
+		rune is a data type in go that represent unicode code point
+
+		data[index] --> returns byte
+
+	*/
+	charMap2 := make(map[rune]int)
+
+	for i := 0; i < len(data); i++ {
+		charMap2[rune(data[i])]++
+	}
+
 }
 
 func library() {
